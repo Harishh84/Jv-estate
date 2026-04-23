@@ -1316,8 +1316,8 @@ h1, h2, h3, h4 {
             </div>
             <div style="margin-top:1.5rem;padding-top:1.5rem;border-top:1px solid var(--cream-dark);">
               <p style="font-size:0.82rem;color:var(--text-light);margin-bottom:0.8rem;">Or contact us directly:</p>
-              <a href="tel:+919876543210" style="display:flex;align-items:center;gap:0.6rem;color:var(--green);font-weight:600;margin-bottom:0.6rem;">
-                <i class="fas fa-phone"></i> +91 98765 43210
+              <a href="tel:+919738382786" style="display:flex;align-items:center;gap:0.6rem;color:var(--green);font-weight:600;margin-bottom:0.6rem;">
+                <i class="fas fa-phone"></i> +91 98456 25454
               </a>
               <a href="mailto:jvestates.ss@gmail.com" style="display:flex;align-items:center;gap:0.6rem;color:var(--green);font-weight:600;">
                 <i class="fas fa-envelope"></i> jvestates.ss@gmail.com
@@ -1353,7 +1353,7 @@ h1, h2, h3, h4 {
       </div>
       <div class="footer-links"><h4>Quick Links</h4><ul><li><a href="index.html">Home</a></li><li><a href="listings.html">Listings</a></li><li><a href="about.html">About</a></li><li><a href="contact.html">Contact</a></li></ul></div>
       <div class="footer-links"><h4>Property Types</h4><ul><li><a href="listings.html?type=plot">Plots</a></li><li><a href="listings.html?type=building">Buildings</a></li><li><a href="listings.html?type=site">Sites</a></li></ul></div>
-      <div class="footer-contact"><h4>Contact</h4><p><i class="fas fa-envelope"></i> jvestates.ss@gmail.com</p><p><i class="fas fa-phone"></i> +91 98765 43210</p><p><i class="fas fa-map-marker-alt"></i> 42, Richmond Road, Bangalore – 560025</p></div>
+      <div class="footer-contact"><h4>Contact</h4><p><i class="fas fa-envelope"></i> jvestates.ss@gmail.com</p><p><i class="fas fa-phone"></i> +91 98456 25454</p><p><i class="fas fa-map-marker-alt"></i> 42, Richmond Road, Bangalore – 560025</p></div>
     </div>
     <div class="footer-bottom"><p>© 2025 JV Estate. All rights reserved.</p></div>
   </footer>
@@ -1377,7 +1377,7 @@ h1, h2, h3, h4 {
       btn.disabled = true;
 
       const prop = document.getElementById('detailTitle').textContent;
-      emailjs.send('YOUR_SERVICE_ID', 'YOUR_TEMPLATE_ID', {
+      emailjs.send('service_alne3z5', 'template_7o41se6', {
         to_email:    'jvestates.ss@gmail.com',
         from_name:   document.getElementById('enqName').value,
         from_email:  document.getElementById('enqEmail').value,
@@ -1391,7 +1391,7 @@ h1, h2, h3, h4 {
       }).catch(() => {
         btn.textContent = 'Book Site Visit';
         btn.disabled = false;
-        alert('Could not send. Please call us at +91 98765 43210');
+        alert('Could not send. Please call us at +91 98456 25454');
       });
     }
   </script>
@@ -1677,8 +1677,8 @@ if (registerForm) {
     // Replace the values below with your EmailJS Service ID, Template ID, and Public Key
     // Sign up free at https://www.emailjs.com
     emailjs.send(
-      'YOUR_SERVICE_ID',    // ← Replace with your EmailJS Service ID
-      'YOUR_TEMPLATE_ID',   // ← Replace with your EmailJS Template ID
+      'service_alne3z5',    // ← Replace with your EmailJS Service ID
+      'template_7o41se6',   // ← Replace with your EmailJS Template ID
       {
         to_email:    'jvestates.ss@gmail.com',
         from_name:   data.name,
@@ -1723,8 +1723,8 @@ if (contactForm) {
     };
 
     emailjs.send(
-      'YOUR_SERVICE_ID',
-      'YOUR_TEMPLATE_ID',
+      'service_alne3z5',
+      'template_7o41se6',
       {
         to_email:   'jvestates.ss@gmail.com',
         from_name:  data.name,
