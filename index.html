@@ -1,0 +1,2689 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/><meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>JV Estate — Premium Properties</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet"/>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+<style>
+/* ═══════════════════════════════════════════════════════════════
+   JV ESTATE — Main Stylesheet
+   Color Palette: Deep Forest Green + Gold + Warm Cream + Charcoal
+═══════════════════════════════════════════════════════════════ */
+
+:root {
+  --green:       #1B4332;
+  --green-mid:   #2D6A4F;
+  --green-light: #40916C;
+  --gold:        #C9A84C;
+  --gold-light:  #E6C76B;
+  --cream:       #F8F5EF;
+  --cream-dark:  #EDE8DF;
+  --charcoal:    #1C1C1C;
+  --text:        #3A3A3A;
+  --text-light:  #7A7A7A;
+  --white:       #FFFFFF;
+  --shadow:      0 8px 40px rgba(27,67,50,0.12);
+  --shadow-lg:   0 20px 60px rgba(27,67,50,0.18);
+  --radius:      14px;
+  --transition:  all 0.35s cubic-bezier(0.4,0,0.2,1);
+}
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: 'DM Sans', sans-serif;
+  color: var(--text);
+  background: var(--white);
+  overflow-x: hidden;
+}
+
+img { max-width: 100%; display: block; }
+a { text-decoration: none; color: inherit; }
+ul { list-style: none; }
+em { font-style: italic; color: var(--gold); }
+
+/* ── TYPOGRAPHY ─────────────────────────────────────────────── */
+h1, h2, h3, h4 {
+  font-family: 'Cormorant Garamond', serif;
+  font-weight: 600;
+  line-height: 1.15;
+  color: var(--charcoal);
+}
+
+/* ── UTILITY ────────────────────────────────────────────────── */
+.container { max-width: 1220px; margin: 0 auto; padding: 0 2rem; }
+.center-btn { text-align: center; margin-top: 3rem; }
+
+/* ── BUTTONS ────────────────────────────────────────────────── */
+.btn-primary {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: var(--gold);
+  color: var(--charcoal);
+  font-family: 'DM Sans', sans-serif;
+  font-weight: 600;
+  font-size: 0.95rem;
+  padding: 0.85rem 2rem;
+  border-radius: 50px;
+  border: none;
+  cursor: pointer;
+  transition: var(--transition);
+  letter-spacing: 0.02em;
+}
+.btn-primary:hover {
+  background: var(--gold-light);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(201,168,76,0.35);
+}
+
+.btn-ghost {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: transparent;
+  color: var(--white);
+  font-family: 'DM Sans', sans-serif;
+  font-weight: 500;
+  font-size: 0.95rem;
+  padding: 0.83rem 1.9rem;
+  border-radius: 50px;
+  border: 2px solid rgba(255,255,255,0.5);
+  cursor: pointer;
+  transition: var(--transition);
+}
+.btn-ghost:hover {
+  border-color: var(--white);
+  background: rgba(255,255,255,0.1);
+  transform: translateY(-2px);
+}
+
+.btn-outline {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: transparent;
+  color: var(--green);
+  font-family: 'DM Sans', sans-serif;
+  font-weight: 600;
+  font-size: 0.9rem;
+  padding: 0.75rem 1.75rem;
+  border-radius: 50px;
+  border: 2px solid var(--green);
+  cursor: pointer;
+  transition: var(--transition);
+}
+.btn-outline:hover {
+  background: var(--green);
+  color: var(--white);
+  transform: translateY(-2px);
+}
+
+/* ══════════════════════════════════════════════════════════════
+   NAVBAR
+══════════════════════════════════════════════════════════════ */
+.navbar {
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  z-index: 1000;
+  padding: 1.2rem 0;
+  transition: var(--transition);
+}
+.navbar.scrolled {
+  background: var(--green);
+  padding: 0.8rem 0;
+  box-shadow: 0 4px 30px rgba(27,67,50,0.3);
+}
+.nav-inner {
+  max-width: 1220px;
+  margin: 0 auto;
+  padding: 0 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+}
+.logo-icon {
+  width: 42px; height: 42px;
+  background: var(--gold);
+  color: var(--charcoal);
+  font-family: 'Cormorant Garamond', serif;
+  font-weight: 700;
+  font-size: 1.1rem;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  letter-spacing: 0.05em;
+}
+.logo-text {
+  font-family: 'Cormorant Garamond', serif;
+  font-weight: 700;
+  font-size: 1.4rem;
+  color: var(--white);
+  letter-spacing: 0.15em;
+}
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+.nav-link {
+  color: rgba(255,255,255,0.85);
+  font-size: 0.9rem;
+  font-weight: 500;
+  padding: 0.5rem 1rem;
+  border-radius: 50px;
+  transition: var(--transition);
+}
+.nav-link:hover, .nav-link.active {
+  color: var(--white);
+  background: rgba(255,255,255,0.12);
+}
+.nav-btn {
+  background: var(--gold);
+  color: var(--charcoal) !important;
+  font-size: 0.88rem;
+  font-weight: 600;
+  padding: 0.6rem 1.4rem;
+  border-radius: 50px;
+  transition: var(--transition);
+}
+.nav-btn:hover {
+  background: var(--gold-light);
+  transform: translateY(-1px);
+}
+.hamburger {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0.3rem;
+}
+.hamburger span {
+  width: 24px; height: 2px;
+  background: var(--white);
+  border-radius: 2px;
+  transition: var(--transition);
+}
+
+/* ══════════════════════════════════════════════════════════════
+   HERO
+══════════════════════════════════════════════════════════════ */
+.hero {
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  background: var(--green);
+  overflow: hidden;
+}
+.hero-bg { position: absolute; inset: 0; z-index: 0; }
+.hero-overlay {
+  position: absolute; inset: 0;
+  background: linear-gradient(135deg, var(--green) 0%, var(--green-mid) 60%, rgba(64,145,108,0.7) 100%);
+}
+.hero-shapes { position: absolute; inset: 0; }
+.shape {
+  position: absolute;
+  border-radius: 50%;
+  opacity: 0.07;
+  background: var(--gold);
+}
+.s1 { width: 600px; height: 600px; top: -150px; right: -100px; animation: pulse 8s ease-in-out infinite; }
+.s2 { width: 300px; height: 300px; bottom: 50px; right: 200px; animation: pulse 10s ease-in-out infinite 2s; }
+.s3 { width: 200px; height: 200px; bottom: -50px; left: 100px; animation: pulse 7s ease-in-out infinite 1s; }
+@keyframes pulse { 0%,100%{transform:scale(1);} 50%{transform:scale(1.08);} }
+
+.hero-content {
+  position: relative; z-index: 1;
+  max-width: 1220px; margin: 0 auto; padding: 8rem 2rem 5rem;
+  animation: fadeUp 1s ease both;
+}
+@keyframes fadeUp { from{opacity:0;transform:translateY(40px);} to{opacity:1;transform:translateY(0);} }
+
+.hero-tag {
+  display: inline-block;
+  color: var(--gold);
+  font-size: 0.85rem;
+  font-weight: 600;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  margin-bottom: 1.2rem;
+  padding: 0.4rem 1rem;
+  border: 1px solid rgba(201,168,76,0.4);
+  border-radius: 50px;
+}
+.hero-title {
+  font-size: clamp(3rem, 6vw, 5.5rem);
+  color: var(--white);
+  margin-bottom: 1.5rem;
+  font-weight: 300;
+  max-width: 700px;
+}
+.hero-title em { color: var(--gold-light); }
+.hero-sub {
+  color: rgba(255,255,255,0.75);
+  font-size: 1.1rem;
+  max-width: 520px;
+  line-height: 1.7;
+  margin-bottom: 2.5rem;
+}
+.hero-cta {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+  margin-bottom: 4rem;
+}
+.hero-stats {
+  display: flex;
+  align-items: center;
+  gap: 2.5rem;
+  flex-wrap: wrap;
+}
+.stat { display: flex; flex-direction: column; }
+.stat-num {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 2.2rem;
+  font-weight: 700;
+  color: var(--gold-light);
+  line-height: 1;
+}
+.stat-label { font-size: 0.8rem; color: rgba(255,255,255,0.65); margin-top: 0.25rem; }
+.stat-divider { width: 1px; height: 40px; background: rgba(255,255,255,0.2); }
+
+.hero-scroll-hint {
+  position: absolute;
+  right: 3rem; bottom: 3rem; z-index: 1;
+  display: flex; flex-direction: column;
+  align-items: center; gap: 0.5rem;
+}
+.hero-scroll-hint span {
+  font-size: 0.7rem; letter-spacing: 0.15em;
+  color: rgba(255,255,255,0.5); text-transform: uppercase;
+  writing-mode: vertical-rl;
+}
+.scroll-line {
+  width: 1px; height: 60px;
+  background: linear-gradient(to bottom, rgba(255,255,255,0.5), transparent);
+  animation: scrollLine 2s ease-in-out infinite;
+}
+@keyframes scrollLine { 0%,100%{height:60px;opacity:1;} 50%{height:30px;opacity:0.5;} }
+
+/* ══════════════════════════════════════════════════════════════
+   SEARCH BAR SECTION
+══════════════════════════════════════════════════════════════ */
+.search-bar-section {
+  background: var(--cream);
+  padding: 0;
+  position: relative;
+  z-index: 10;
+}
+.search-container {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 2rem;
+  transform: translateY(-50%);
+}
+.search-box {
+  background: var(--white);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow-lg);
+  display: flex;
+  align-items: stretch;
+  overflow: hidden;
+  border: 1px solid rgba(27,67,50,0.08);
+}
+.search-field {
+  flex: 1;
+  padding: 1.5rem 1.8rem;
+  border-right: 1px solid var(--cream-dark);
+  display: flex; flex-direction: column; gap: 0.3rem;
+}
+.search-field label {
+  font-size: 0.7rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--text-light);
+}
+.search-field input,
+.search-field select {
+  border: none; outline: none;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.95rem;
+  color: var(--text);
+  background: transparent;
+  width: 100%;
+}
+.search-btn {
+  background: var(--green);
+  color: var(--white);
+  font-weight: 600;
+  font-size: 0.95rem;
+  padding: 0 2.5rem;
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  cursor: pointer;
+  transition: var(--transition);
+  white-space: nowrap;
+}
+.search-btn:hover { background: var(--green-mid); }
+
+/* ══════════════════════════════════════════════════════════════
+   SECTIONS COMMON
+══════════════════════════════════════════════════════════════ */
+.section { padding: 7rem 0; }
+.featured-section { padding-top: 3rem; background: var(--cream); }
+
+.section-header { text-align: center; margin-bottom: 3.5rem; }
+.section-tag {
+  display: inline-block;
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-bottom: 0.75rem;
+}
+.section-tag.light { color: var(--gold-light); }
+.section-title {
+  font-size: clamp(2rem, 4vw, 3rem);
+  margin-bottom: 1rem;
+}
+.section-title.light { color: var(--white); }
+.section-sub { color: var(--text-light); font-size: 1rem; max-width: 500px; margin: 0 auto; line-height: 1.7; }
+
+/* ══════════════════════════════════════════════════════════════
+   LISTINGS GRID
+══════════════════════════════════════════════════════════════ */
+.listings-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+  gap: 2rem;
+}
+.listing-card {
+  background: var(--white);
+  border-radius: var(--radius);
+  overflow: hidden;
+  box-shadow: var(--shadow);
+  transition: var(--transition);
+  border: 1px solid rgba(27,67,50,0.06);
+}
+.listing-card:hover {
+  transform: translateY(-6px);
+  box-shadow: var(--shadow-lg);
+}
+.card-img {
+  position: relative;
+  height: 230px;
+  overflow: hidden;
+}
+.card-img img {
+  width: 100%; height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+.listing-card:hover .card-img img { transform: scale(1.06); }
+.card-badge {
+  position: absolute;
+  top: 1rem; left: 1rem;
+  background: var(--gold);
+  color: var(--charcoal);
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  padding: 0.35rem 0.9rem;
+  border-radius: 50px;
+}
+.card-badge.new { background: var(--green-light); color: var(--white); }
+.card-wishlist {
+  position: absolute;
+  top: 1rem; right: 1rem;
+  width: 36px; height: 36px;
+  background: rgba(255,255,255,0.9);
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 1rem;
+  color: var(--text-light);
+  transition: var(--transition);
+}
+.card-wishlist:hover { color: #e74c3c; background: var(--white); }
+.card-body { padding: 1.5rem; }
+.card-type {
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--green-light);
+  margin-bottom: 0.4rem;
+}
+.card-title {
+  font-size: 1.25rem;
+  margin-bottom: 0.5rem;
+  color: var(--charcoal);
+}
+.card-location {
+  font-size: 0.85rem;
+  color: var(--text-light);
+  display: flex; align-items: center; gap: 0.3rem;
+  margin-bottom: 1rem;
+}
+.card-details {
+  display: flex;
+  gap: 1.5rem;
+  padding: 1rem 0;
+  border-top: 1px solid var(--cream-dark);
+  border-bottom: 1px solid var(--cream-dark);
+  margin-bottom: 1.2rem;
+}
+.card-detail {
+  display: flex; flex-direction: column; gap: 0.1rem;
+}
+.card-detail span:first-child {
+  font-size: 0.7rem;
+  font-weight: 600;
+  color: var(--text-light);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+.card-detail span:last-child {
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: var(--text);
+}
+.card-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.card-price {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--green);
+}
+.card-price span {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.75rem;
+  font-weight: 400;
+  color: var(--text-light);
+  display: block;
+}
+.card-cta {
+  background: var(--green);
+  color: var(--white);
+  padding: 0.6rem 1.2rem;
+  border-radius: 50px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  transition: var(--transition);
+}
+.card-cta:hover { background: var(--green-mid); transform: translateY(-1px); }
+
+/* ══════════════════════════════════════════════════════════════
+   WHY SECTION
+══════════════════════════════════════════════════════════════ */
+.why-section {
+  position: relative;
+  padding: 7rem 0;
+  overflow: hidden;
+}
+.why-bg {
+  position: absolute; inset: 0;
+  background: linear-gradient(135deg, var(--green) 0%, var(--charcoal) 100%);
+  z-index: 0;
+}
+.why-inner {
+  position: relative; z-index: 1;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 5rem;
+  align-items: center;
+}
+.why-text { display: flex; flex-direction: column; gap: 1.5rem; }
+.why-desc { color: rgba(255,255,255,0.7); line-height: 1.8; font-size: 1.02rem; }
+.why-cards {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.2rem;
+}
+.why-card {
+  background: rgba(255,255,255,0.07);
+  border: 1px solid rgba(255,255,255,0.1);
+  border-radius: var(--radius);
+  padding: 1.8rem;
+  backdrop-filter: blur(10px);
+  transition: var(--transition);
+}
+.why-card:hover {
+  background: rgba(255,255,255,0.12);
+  transform: translateY(-3px);
+}
+.why-icon {
+  width: 48px; height: 48px;
+  background: rgba(201,168,76,0.2);
+  border-radius: 10px;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 1.2rem;
+  color: var(--gold-light);
+  margin-bottom: 1rem;
+}
+.why-card h4 {
+  font-size: 1rem;
+  color: var(--white);
+  margin-bottom: 0.5rem;
+}
+.why-card p { font-size: 0.85rem; color: rgba(255,255,255,0.6); line-height: 1.6; }
+
+/* ══════════════════════════════════════════════════════════════
+   CATEGORIES
+══════════════════════════════════════════════════════════════ */
+.categories-section { background: var(--white); }
+.cat-grid {
+  display: grid;
+  grid-template-columns: repeat(4,1fr);
+  gap: 1.5rem;
+}
+.cat-card {
+  border-radius: var(--radius);
+  overflow: hidden;
+  position: relative;
+  height: 320px;
+  transition: var(--transition);
+  display: block;
+}
+.cat-card:hover { transform: translateY(-6px); box-shadow: var(--shadow-lg); }
+.cat-img {
+  position: absolute; inset: 0;
+  background-size: cover;
+  background-position: center;
+  transition: transform 0.5s ease;
+}
+.cat-card:hover .cat-img { transform: scale(1.07); }
+.plots-bg     { background: linear-gradient(135deg, #2d5a1b 0%, #4a8c2d 100%); background-image: url('https://images.unsplash.com/photo-1500382017468-9049fed747ef?w=600&q=80'), linear-gradient(135deg, #2d5a1b, #4a8c2d); background-blend-mode: multiply; background-size: cover; }
+.buildings-bg { background: linear-gradient(135deg, #1b3a5a 0%, #2d6a8c 100%); background-image: url('https://images.unsplash.com/photo-1486325212027-8081e485255e?w=600&q=80'), linear-gradient(135deg, #1b3a5a, #2d6a8c); background-blend-mode: multiply; background-size: cover; }
+.sites-bg     { background: linear-gradient(135deg, #5a2d1b 0%, #8c4a2d 100%); background-image: url('https://images.unsplash.com/photo-1560518883-ce09059eeffa?w=600&q=80'), linear-gradient(135deg, #5a2d1b, #8c4a2d); background-blend-mode: multiply; background-size: cover; }
+.commercial-bg{ background: linear-gradient(135deg, #3d1b5a 0%, #6a2d8c 100%); background-image: url('https://images.unsplash.com/photo-1497366216548-37526070297c?w=600&q=80'), linear-gradient(135deg, #3d1b5a, #6a2d8c); background-blend-mode: multiply; background-size: cover; }
+
+.cat-info {
+  position: absolute;
+  bottom: 0; left: 0; right: 0;
+  padding: 2rem 1.8rem 1.8rem;
+  background: linear-gradient(to top, rgba(0,0,0,0.75) 0%, transparent 100%);
+  color: var(--white);
+}
+.cat-info i { font-size: 1.5rem; color: var(--gold-light); margin-bottom: 0.5rem; }
+.cat-info h3 { font-size: 1.4rem; margin-bottom: 0.25rem; }
+.cat-info span { font-size: 0.8rem; opacity: 0.75; }
+
+/* ══════════════════════════════════════════════════════════════
+   TESTIMONIALS
+══════════════════════════════════════════════════════════════ */
+.testimonials-section { background: var(--cream); }
+.testimonials-grid {
+  display: grid;
+  grid-template-columns: 1fr 1.15fr 1fr;
+  gap: 1.5rem;
+  align-items: stretch;
+}
+.testimonial-card {
+  background: var(--white);
+  border-radius: var(--radius);
+  padding: 2rem;
+  box-shadow: var(--shadow);
+  display: flex; flex-direction: column; gap: 1rem;
+  transition: var(--transition);
+}
+.testimonial-card:hover { transform: translateY(-4px); box-shadow: var(--shadow-lg); }
+.featured-review {
+  background: var(--green);
+  color: var(--white);
+  transform: translateY(-10px);
+}
+.featured-review p, .featured-review .stars { color: var(--white); }
+.featured-review .client strong { color: var(--gold-light); }
+.featured-review .client span { color: rgba(255,255,255,0.6); }
+.stars { color: var(--gold); font-size: 1.1rem; }
+.featured-review .stars { color: var(--gold-light); }
+.testimonial-card p { font-size: 0.95rem; line-height: 1.7; color: var(--text); font-style: italic; }
+.client { display: flex; align-items: center; gap: 1rem; margin-top: auto; }
+.client-avatar {
+  width: 44px; height: 44px;
+  border-radius: 50%;
+  background: var(--green-light);
+  color: var(--white);
+  display: flex; align-items: center; justify-content: center;
+  font-weight: 700;
+  font-size: 0.85rem;
+  flex-shrink: 0;
+}
+.featured-review .client-avatar { background: var(--gold); color: var(--charcoal); }
+.client strong { display: block; font-size: 0.9rem; font-weight: 600; color: var(--charcoal); }
+.client span { font-size: 0.8rem; color: var(--text-light); }
+
+/* ══════════════════════════════════════════════════════════════
+   CTA BANNER
+══════════════════════════════════════════════════════════════ */
+.cta-banner {
+  background: linear-gradient(135deg, var(--gold) 0%, var(--gold-light) 100%);
+  padding: 6rem 2rem;
+  text-align: center;
+}
+.cta-content h2 {
+  font-size: clamp(2rem, 4vw, 3rem);
+  color: var(--charcoal);
+  margin-bottom: 1rem;
+}
+.cta-content h2 em { color: var(--green); font-style: italic; }
+.cta-content p { color: rgba(28,28,28,0.7); margin-bottom: 2rem; font-size: 1.05rem; }
+.cta-btns { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; }
+.cta-btns .btn-primary { background: var(--green); color: var(--white); }
+.cta-btns .btn-primary:hover { background: var(--green-mid); }
+.cta-btns .btn-ghost { color: var(--charcoal); border-color: rgba(28,28,28,0.4); }
+.cta-btns .btn-ghost:hover { background: rgba(28,28,28,0.08); }
+
+/* ══════════════════════════════════════════════════════════════
+   FOOTER
+══════════════════════════════════════════════════════════════ */
+.footer { background: var(--charcoal); padding: 5rem 0 0; }
+.footer-inner {
+  max-width: 1220px;
+  margin: 0 auto;
+  padding: 0 2rem 3rem;
+  display: grid;
+  grid-template-columns: 1.5fr 1fr 1fr 1.5fr;
+  gap: 3rem;
+}
+.footer-brand .logo { margin-bottom: 1.2rem; }
+.footer-brand p { font-size: 0.88rem; color: rgba(255,255,255,0.55); line-height: 1.8; margin-bottom: 1.5rem; }
+.social-links { display: flex; gap: 0.75rem; }
+.social-links a {
+  width: 38px; height: 38px;
+  border-radius: 50%;
+  border: 1px solid rgba(255,255,255,0.15);
+  color: rgba(255,255,255,0.6);
+  display: flex; align-items: center; justify-content: center;
+  font-size: 0.85rem;
+  transition: var(--transition);
+}
+.social-links a:hover { background: var(--gold); color: var(--charcoal); border-color: var(--gold); }
+
+.footer-links h4, .footer-contact h4 {
+  color: var(--white);
+  font-size: 1rem;
+  margin-bottom: 1.5rem;
+  font-family: 'DM Sans', sans-serif;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+}
+.footer-links ul { display: flex; flex-direction: column; gap: 0.7rem; }
+.footer-links a { font-size: 0.88rem; color: rgba(255,255,255,0.55); transition: var(--transition); }
+.footer-links a:hover { color: var(--gold-light); padding-left: 4px; }
+.footer-contact p {
+  font-size: 0.88rem;
+  color: rgba(255,255,255,0.55);
+  margin-bottom: 0.8rem;
+  display: flex; align-items: flex-start; gap: 0.7rem;
+  line-height: 1.6;
+}
+.footer-contact i { color: var(--gold); margin-top: 2px; min-width: 14px; }
+
+.footer-bottom {
+  border-top: 1px solid rgba(255,255,255,0.08);
+  padding: 1.5rem 2rem;
+  text-align: center;
+}
+.footer-bottom p { font-size: 0.82rem; color: rgba(255,255,255,0.35); }
+
+/* ══════════════════════════════════════════════════════════════
+   PAGE HERO (Inner Pages)
+══════════════════════════════════════════════════════════════ */
+.page-hero {
+  background: var(--green);
+  padding: 9rem 0 5rem;
+  position: relative;
+  overflow: hidden;
+}
+.page-hero::before {
+  content: '';
+  position: absolute;
+  top: -100px; right: -100px;
+  width: 500px; height: 500px;
+  border-radius: 50%;
+  background: rgba(201,168,76,0.06);
+}
+.page-hero-inner { max-width: 1220px; margin: 0 auto; padding: 0 2rem; }
+.page-hero p.section-tag { margin-bottom: 0.8rem; }
+.page-hero h1 { font-size: clamp(2rem,4vw,3.2rem); color: var(--white); }
+.page-hero .breadcrumb {
+  margin-top: 1rem;
+  font-size: 0.85rem;
+  color: rgba(255,255,255,0.55);
+}
+.page-hero .breadcrumb a { color: rgba(255,255,255,0.75); }
+.page-hero .breadcrumb a:hover { color: var(--gold-light); }
+
+/* ══════════════════════════════════════════════════════════════
+   LISTINGS PAGE FILTERS
+══════════════════════════════════════════════════════════════ */
+.filters-bar {
+  background: var(--cream);
+  border-bottom: 1px solid var(--cream-dark);
+  padding: 1.5rem 0;
+  position: sticky;
+  top: 68px;
+  z-index: 100;
+}
+.filters-inner {
+  max-width: 1220px;
+  margin: 0 auto;
+  padding: 0 2rem;
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+  align-items: center;
+}
+.filter-chip {
+  background: var(--white);
+  border: 1.5px solid var(--cream-dark);
+  color: var(--text);
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.85rem;
+  font-weight: 500;
+  padding: 0.5rem 1.2rem;
+  border-radius: 50px;
+  cursor: pointer;
+  transition: var(--transition);
+}
+.filter-chip:hover, .filter-chip.active {
+  background: var(--green);
+  color: var(--white);
+  border-color: var(--green);
+}
+.filter-count {
+  margin-left: auto;
+  font-size: 0.85rem;
+  color: var(--text-light);
+}
+
+/* ══════════════════════════════════════════════════════════════
+   PROPERTY DETAIL PAGE
+══════════════════════════════════════════════════════════════ */
+.property-detail { padding: 5rem 0; }
+.detail-grid {
+  display: grid;
+  grid-template-columns: 1.6fr 1fr;
+  gap: 3rem;
+  align-items: start;
+}
+.gallery { border-radius: var(--radius); overflow: hidden; margin-bottom: 2rem; }
+.gallery-main { height: 450px; }
+.gallery-main img { width:100%; height:100%; object-fit:cover; }
+.gallery-thumbs {
+  display: grid;
+  grid-template-columns: repeat(4,1fr);
+  gap: 0.5rem;
+  margin-top: 0.5rem;
+}
+.gallery-thumb { height: 80px; border-radius: 8px; overflow: hidden; cursor: pointer; }
+.gallery-thumb img { width:100%; height:100%; object-fit:cover; transition: var(--transition); }
+.gallery-thumb:hover img { opacity: 0.8; }
+
+.detail-info-card {
+  background: var(--white);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  padding: 2rem;
+  position: sticky;
+  top: 100px;
+}
+.detail-price {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: var(--green);
+  margin-bottom: 1.5rem;
+}
+.detail-form label {
+  display: block;
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: var(--text-light);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  margin-bottom: 0.4rem;
+}
+.detail-form input, .detail-form textarea {
+  width: 100%;
+  border: 1.5px solid var(--cream-dark);
+  border-radius: 8px;
+  padding: 0.8rem 1rem;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.9rem;
+  color: var(--text);
+  background: var(--cream);
+  transition: var(--transition);
+  margin-bottom: 1rem;
+}
+.detail-form input:focus, .detail-form textarea:focus {
+  border-color: var(--green);
+  outline: none;
+  background: var(--white);
+}
+.detail-form textarea { resize: vertical; height: 100px; }
+
+/* ══════════════════════════════════════════════════════════════
+   REGISTER PAGE
+══════════════════════════════════════════════════════════════ */
+.register-section {
+  background: var(--cream);
+  padding: 7rem 0;
+  min-height: calc(100vh - 300px);
+}
+.register-container {
+  max-width: 580px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+.register-card {
+  background: var(--white);
+  border-radius: 20px;
+  box-shadow: var(--shadow-lg);
+  padding: 3rem;
+  border-top: 4px solid var(--gold);
+}
+.register-card h2 {
+  font-size: 2rem;
+  margin-bottom: 0.5rem;
+}
+.register-card p.sub { color: var(--text-light); margin-bottom: 2rem; font-size: 0.95rem; }
+
+.form-group { margin-bottom: 1.4rem; }
+.form-group label {
+  display: block;
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: var(--text);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  margin-bottom: 0.5rem;
+}
+.form-group input,
+.form-group select,
+.form-group textarea {
+  width: 100%;
+  border: 1.5px solid var(--cream-dark);
+  border-radius: 10px;
+  padding: 0.9rem 1.1rem;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.95rem;
+  color: var(--text);
+  background: var(--cream);
+  transition: var(--transition);
+}
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+  border-color: var(--green);
+  outline: none;
+  background: var(--white);
+  box-shadow: 0 0 0 3px rgba(27,67,50,0.08);
+}
+.form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+.submit-btn {
+  width: 100%;
+  background: var(--green);
+  color: var(--white);
+  font-family: 'DM Sans', sans-serif;
+  font-size: 1rem;
+  font-weight: 600;
+  padding: 1rem;
+  border-radius: 10px;
+  border: none;
+  cursor: pointer;
+  transition: var(--transition);
+  margin-top: 0.5rem;
+}
+.submit-btn:hover { background: var(--green-mid); transform: translateY(-2px); box-shadow: 0 8px 24px rgba(27,67,50,0.3); }
+.form-note { font-size: 0.8rem; color: var(--text-light); text-align: center; margin-top: 1rem; }
+.form-note a { color: var(--green); font-weight: 600; }
+.success-msg {
+  display: none;
+  background: #f0fdf4;
+  border: 1.5px solid #86efac;
+  border-radius: 10px;
+  padding: 1.5rem;
+  text-align: center;
+  color: #15803d;
+  font-size: 0.95rem;
+  margin-top: 1rem;
+}
+.success-msg i { font-size: 2rem; display: block; margin-bottom: 0.5rem; }
+
+/* ══════════════════════════════════════════════════════════════
+   CONTACT PAGE
+══════════════════════════════════════════════════════════════ */
+.contact-section { padding: 7rem 0; background: var(--cream); }
+.contact-grid {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 2rem;
+  display: grid;
+  grid-template-columns: 1fr 1.5fr;
+  gap: 4rem;
+  align-items: start;
+}
+.contact-info h2 { font-size: 2rem; margin-bottom: 1rem; }
+.contact-info p { color: var(--text-light); line-height: 1.8; margin-bottom: 2rem; }
+.contact-detail {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+  align-items: flex-start;
+}
+.contact-detail-icon {
+  width: 46px; height: 46px;
+  background: var(--green);
+  border-radius: 10px;
+  display: flex; align-items: center; justify-content: center;
+  color: var(--gold-light);
+  font-size: 1.1rem;
+  flex-shrink: 0;
+}
+.contact-detail-text strong { display: block; font-weight: 600; margin-bottom: 0.2rem; }
+.contact-detail-text span { font-size: 0.9rem; color: var(--text-light); }
+.contact-form-card {
+  background: var(--white);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  padding: 2.5rem;
+}
+.contact-form-card h3 { font-size: 1.5rem; margin-bottom: 1.8rem; }
+
+/* ══════════════════════════════════════════════════════════════
+   ABOUT PAGE
+══════════════════════════════════════════════════════════════ */
+.about-intro {
+  padding: 7rem 0;
+  background: var(--white);
+}
+.about-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 5rem;
+  align-items: center;
+}
+.about-img { border-radius: var(--radius); overflow: hidden; box-shadow: var(--shadow-lg); height: 480px; }
+.about-img img { width:100%; height:100%; object-fit:cover; }
+.about-text p { color: var(--text-light); line-height: 1.8; margin-bottom: 1.2rem; }
+.about-highlight {
+  background: var(--cream);
+  border-left: 4px solid var(--gold);
+  padding: 1.2rem 1.5rem;
+  border-radius: 0 10px 10px 0;
+  margin: 1.5rem 0;
+  font-style: italic;
+  color: var(--charcoal);
+}
+.team-section { background: var(--cream); padding: 7rem 0; }
+.team-grid {
+  display: grid;
+  grid-template-columns: repeat(3,1fr);
+  gap: 2rem;
+}
+.team-card {
+  background: var(--white);
+  border-radius: var(--radius);
+  overflow: hidden;
+  box-shadow: var(--shadow);
+  text-align: center;
+  transition: var(--transition);
+}
+.team-card:hover { transform: translateY(-6px); box-shadow: var(--shadow-lg); }
+.team-img { height: 240px; overflow: hidden; }
+.team-img img { width:100%; height:100%; object-fit:cover; }
+.team-body { padding: 1.5rem; }
+.team-body h4 { font-size: 1.2rem; margin-bottom: 0.25rem; }
+.team-body .role { font-size: 0.85rem; color: var(--gold); font-weight: 600; margin-bottom: 0.8rem; }
+.team-body p { font-size: 0.85rem; color: var(--text-light); line-height: 1.6; }
+
+/* ══════════════════════════════════════════════════════════════
+   TOAST NOTIFICATION
+══════════════════════════════════════════════════════════════ */
+.toast {
+  position: fixed;
+  bottom: 2rem; right: 2rem;
+  background: var(--green);
+  color: var(--white);
+  padding: 1rem 1.5rem;
+  border-radius: 12px;
+  box-shadow: var(--shadow-lg);
+  font-size: 0.9rem;
+  font-weight: 500;
+  z-index: 9999;
+  display: flex; align-items: center; gap: 0.6rem;
+  transform: translateY(100px);
+  opacity: 0;
+  transition: all 0.4s cubic-bezier(0.4,0,0.2,1);
+}
+.toast.show { transform: translateY(0); opacity: 1; }
+
+/* ══════════════════════════════════════════════════════════════
+   SCROLL TO TOP
+══════════════════════════════════════════════════════════════ */
+.scroll-top {
+  position: fixed;
+  bottom: 2rem; left: 2rem;
+  width: 44px; height: 44px;
+  background: var(--gold);
+  color: var(--charcoal);
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 1rem;
+  box-shadow: var(--shadow);
+  transition: var(--transition);
+  opacity: 0; pointer-events: none;
+  z-index: 500;
+}
+.scroll-top.visible { opacity: 1; pointer-events: auto; }
+.scroll-top:hover { background: var(--gold-light); transform: translateY(-3px); }
+
+/* ══════════════════════════════════════════════════════════════
+   RESPONSIVE
+══════════════════════════════════════════════════════════════ */
+@media (max-width: 1024px) {
+  .why-inner { grid-template-columns: 1fr; gap: 3rem; }
+  .cat-grid { grid-template-columns: repeat(2,1fr); }
+  .testimonials-grid { grid-template-columns: 1fr; }
+  .featured-review { transform: none; }
+  .footer-inner { grid-template-columns: 1fr 1fr; gap: 2rem; }
+  .detail-grid { grid-template-columns: 1fr; }
+  .about-grid { grid-template-columns: 1fr; }
+  .team-grid { grid-template-columns: repeat(2,1fr); }
+  .contact-grid { grid-template-columns: 1fr; }
+}
+
+@media (max-width: 768px) {
+  .hamburger { display: flex; }
+  .nav-links {
+    position: fixed;
+    top: 0; right: -100%;
+    width: 280px; height: 100vh;
+    background: var(--green);
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 5rem 2rem 2rem;
+    gap: 0.25rem;
+    transition: var(--transition);
+    z-index: 999;
+  }
+  .nav-links.open { right: 0; }
+  .nav-link { width: 100%; padding: 0.75rem 1rem; }
+  .nav-btn { margin-top: 1rem; }
+
+  .search-box { flex-direction: column; }
+  .search-field { border-right: none; border-bottom: 1px solid var(--cream-dark); }
+  .search-btn { border-radius: 0; padding: 1.2rem; justify-content: center; }
+  .search-container { transform: translateY(-30px); }
+
+  .cat-grid { grid-template-columns: 1fr 1fr; }
+  .listings-grid { grid-template-columns: 1fr; }
+  .footer-inner { grid-template-columns: 1fr; }
+  .hero-stats { gap: 1.5rem; }
+  .stat-divider { display: none; }
+  .form-row { grid-template-columns: 1fr; }
+  .team-grid { grid-template-columns: 1fr; }
+  .why-cards { grid-template-columns: 1fr; }
+}
+
+@media (max-width: 480px) {
+  .cat-grid { grid-template-columns: 1fr; }
+  .hero-cta { flex-direction: column; }
+  .hero-cta a { text-align: center; justify-content: center; }
+  .register-card { padding: 2rem 1.5rem; }
+}
+</style></head>
+<body>
+
+  <!-- ═══════════════════════════════ NAVBAR ═══════════════════════════════ -->
+  <nav class="navbar" id="navbar">
+    <div class="nav-inner">
+      <a href="index.html" class="logo">
+        <span class="logo-icon">JV</span>
+        <span class="logo-text">ESTATE</span>
+      </a>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="index.html" class="nav-link active">Home</a></li>
+        <li><a href="listings.html" class="nav-link">Listings</a></li>
+        <li><a href="about.html" class="nav-link">About</a></li>
+        <li><a href="contact.html" class="nav-link">Contact</a></li>
+        <li><a href="register.html" class="nav-btn">Register</a></li>
+      </ul>
+      <button class="hamburger" id="hamburger" aria-label="Menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- ═══════════════════════════════ HERO ════════════════════════════════ -->
+  <section class="hero">
+    <div class="hero-bg">
+      <div class="hero-overlay"></div>
+      <div class="hero-shapes">
+        <div class="shape s1"></div>
+        <div class="shape s2"></div>
+        <div class="shape s3"></div>
+      </div>
+    </div>
+    <div class="hero-content">
+      <p class="hero-tag">Welcome to JV Estate</p>
+      <h1 class="hero-title">Find Your <em>Perfect</em><br/>Property</h1>
+      <p class="hero-sub">Premium sites, buildings & plots curated for discerning buyers.<br/>Your dream address is one search away.</p>
+      <div class="hero-cta">
+        <a href="listings.html" class="btn-primary">Explore Listings</a>
+        <a href="contact.html" class="btn-ghost">Talk to Us</a>
+      </div>
+      <div class="hero-stats">
+        <div class="stat"><span class="stat-num">250+</span><span class="stat-label">Properties Listed</span></div>
+        <div class="stat-divider"></div>
+        <div class="stat"><span class="stat-num">10+</span><span class="stat-label">Years Experience</span></div>
+        <div class="stat-divider"></div>
+        <div class="stat"><span class="stat-num">1200+</span><span class="stat-label">Happy Clients</span></div>
+      </div>
+    </div>
+    <div class="hero-scroll-hint">
+      <span>Scroll</span>
+      <div class="scroll-line"></div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════ SEARCH BAR ══════════════════════════ -->
+  <section class="search-bar-section">
+    <div class="search-container">
+      <div class="search-box">
+        <div class="search-field">
+          <label>Location</label>
+          <input type="text" placeholder="City, Area, or Address"/>
+        </div>
+        <div class="search-field">
+          <label>Type</label>
+          <select>
+            <option>All Types</option>
+            <option>Plot</option>
+            <option>Building</option>
+            <option>Site</option>
+            <option>Commercial</option>
+          </select>
+        </div>
+        <div class="search-field">
+          <label>Budget</label>
+          <select>
+            <option>Any Budget</option>
+            <option>Under ₹25 Lakhs</option>
+            <option>₹25L – ₹75L</option>
+            <option>₹75L – ₹2 Cr</option>
+            <option>Above ₹2 Cr</option>
+          </select>
+        </div>
+        <a href="listings.html" class="search-btn">
+          <i class="fas fa-search"></i> Search
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════ FEATURED LISTINGS ═══════════════════ -->
+  <section class="section featured-section">
+    <div class="container">
+      <div class="section-header">
+        <p class="section-tag">Hand-Picked</p>
+        <h2 class="section-title">Featured <em>Properties</em></h2>
+        <p class="section-sub">Explore our most sought-after listings across prime locations.</p>
+      </div>
+      <div class="listings-grid" id="featuredGrid">
+        <!-- Populated by JS -->
+      </div>
+      <div class="center-btn">
+        <a href="listings.html" class="btn-primary">View All Listings</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════ WHY US ══════════════════════════════ -->
+  <section class="why-section">
+    <div class="why-bg"></div>
+    <div class="container why-inner">
+      <div class="why-text">
+        <p class="section-tag light">Why JV Estate</p>
+        <h2 class="section-title light">Built on Trust,<br/><em>Driven by Results</em></h2>
+        <p class="why-desc">At JV Estate, we combine deep local expertise with transparent processes to help you find the right property — every time.</p>
+        <a href="about.html" class="btn-primary">Our Story</a>
+      </div>
+      <div class="why-cards">
+        <div class="why-card">
+          <div class="why-icon"><i class="fas fa-shield-halved"></i></div>
+          <h4>Verified Listings</h4>
+          <p>Every property is personally verified by our team before it goes live.</p>
+        </div>
+        <div class="why-card">
+          <div class="why-icon"><i class="fas fa-handshake"></i></div>
+          <h4>No Hidden Costs</h4>
+          <p>Complete transparency in pricing — what you see is what you pay.</p>
+        </div>
+        <div class="why-card">
+          <div class="why-icon"><i class="fas fa-location-dot"></i></div>
+          <h4>Prime Locations</h4>
+          <p>Curated properties in high-growth, well-connected areas.</p>
+        </div>
+        <div class="why-card">
+          <div class="why-icon"><i class="fas fa-headset"></i></div>
+          <h4>Dedicated Support</h4>
+          <p>A personal agent for every client — from search to sale.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════ CATEGORIES ══════════════════════════ -->
+  <section class="section categories-section">
+    <div class="container">
+      <div class="section-header">
+        <p class="section-tag">Browse By</p>
+        <h2 class="section-title">Property <em>Categories</em></h2>
+      </div>
+      <div class="cat-grid">
+        <a href="listings.html?type=plot" class="cat-card">
+          <div class="cat-img plots-bg"></div>
+          <div class="cat-info">
+            <i class="fas fa-map"></i>
+            <h3>Plots</h3>
+            <span>84 Available</span>
+          </div>
+        </a>
+        <a href="listings.html?type=building" class="cat-card">
+          <div class="cat-img buildings-bg"></div>
+          <div class="cat-info">
+            <i class="fas fa-building"></i>
+            <h3>Buildings</h3>
+            <span>56 Available</span>
+          </div>
+        </a>
+        <a href="listings.html?type=site" class="cat-card">
+          <div class="cat-img sites-bg"></div>
+          <div class="cat-info">
+            <i class="fas fa-city"></i>
+            <h3>Sites</h3>
+            <span>112 Available</span>
+          </div>
+        </a>
+        <a href="listings.html?type=commercial" class="cat-card">
+          <div class="cat-img commercial-bg"></div>
+          <div class="cat-info">
+            <i class="fas fa-store"></i>
+            <h3>Commercial</h3>
+            <span>38 Available</span>
+          </div>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════ TESTIMONIALS ═════════════════════════ -->
+  <section class="section testimonials-section">
+    <div class="container">
+      <div class="section-header">
+        <p class="section-tag">Client Stories</p>
+        <h2 class="section-title">What Our <em>Clients Say</em></h2>
+      </div>
+      <div class="testimonials-grid">
+        <div class="testimonial-card">
+          <div class="stars">★★★★★</div>
+          <p>"JV Estate helped us find the perfect plot within our budget. The process was smooth and completely transparent. Highly recommend!"</p>
+          <div class="client">
+            <div class="client-avatar">RK</div>
+            <div><strong>Rajesh Kumar</strong><span>Plot Buyer, Bangalore</span></div>
+          </div>
+        </div>
+        <div class="testimonial-card featured-review">
+          <div class="stars">★★★★★</div>
+          <p>"We were searching for a commercial site for 6 months. JV Estate found us the ideal location in just 3 weeks. Outstanding service and knowledge of the local market."</p>
+          <div class="client">
+            <div class="client-avatar">SP</div>
+            <div><strong>Sunita Patel</strong><span>Commercial Site Buyer, Mysore</span></div>
+          </div>
+        </div>
+        <div class="testimonial-card">
+          <div class="stars">★★★★★</div>
+          <p>"Professional, honest, and incredibly helpful. The team at JV Estate went above and beyond to make our property purchase seamless."</p>
+          <div class="client">
+            <div class="client-avatar">AM</div>
+            <div><strong>Arjun Menon</strong><span>Building Buyer, Coimbatore</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════ CTA BANNER ══════════════════════════ -->
+  <section class="cta-banner">
+    <div class="cta-content">
+      <h2>Ready to Find Your <em>Dream Property?</em></h2>
+      <p>Register today and get exclusive access to new listings before they go public.</p>
+      <div class="cta-btns">
+        <a href="register.html" class="btn-primary">Register Now</a>
+        <a href="contact.html" class="btn-ghost">Contact Us</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════ FOOTER ══════════════════════════════ -->
+  <footer class="footer">
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <a href="index.html" class="logo">
+          <span class="logo-icon">JV</span>
+          <span class="logo-text">ESTATE</span>
+        </a>
+        <p>Your trusted partner in premium real estate across South India. Building futures, one property at a time.</p>
+        <div class="social-links">
+          <a href="#"><i class="fab fa-facebook-f"></i></a>
+          <a href="#"><i class="fab fa-instagram"></i></a>
+          <a href="#"><i class="fab fa-twitter"></i></a>
+          <a href="#"><i class="fab fa-linkedin-in"></i></a>
+          <a href="#"><i class="fab fa-whatsapp"></i></a>
+        </div>
+      </div>
+      <div class="footer-links">
+        <h4>Quick Links</h4>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="listings.html">Listings</a></li>
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="contact.html">Contact</a></li>
+          <li><a href="register.html">Register</a></li>
+        </ul>
+      </div>
+      <div class="footer-links">
+        <h4>Property Types</h4>
+        <ul>
+          <li><a href="listings.html?type=plot">Plots</a></li>
+          <li><a href="listings.html?type=building">Buildings</a></li>
+          <li><a href="listings.html?type=site">Sites</a></li>
+          <li><a href="listings.html?type=commercial">Commercial</a></li>
+        </ul>
+      </div>
+      <div class="footer-contact">
+        <h4>Contact</h4>
+        <p><i class="fas fa-envelope"></i> jvestates.ss@gmail.com</p>
+        <p><i class="fas fa-phone"></i> +91 98456 25454 / +91 97383 82786</p>
+        <p><i class="fas fa-map-marker-alt"></i> 42, Richmond Road,<br/>Bangalore – 560025</p>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2025 JV Estate. All rights reserved. | Designed with ♥ for quality real estate.</p>
+    </div>
+  </footer>
+
+  
+
+<script>
+/* ═══════════════════════════════════════════════════════════
+   JV ESTATE — Main JavaScript
+═══════════════════════════════════════════════════════════ */
+
+// ── NAVBAR SCROLL ────────────────────────────────────────────
+const navbar = document.getElementById('navbar');
+if (navbar) {
+  window.addEventListener('scroll', () => {
+    navbar.classList.toggle('scrolled', window.scrollY > 50);
+  });
+}
+
+// ── HAMBURGER MENU ───────────────────────────────────────────
+const hamburger = document.getElementById('hamburger');
+const navLinks  = document.getElementById('navLinks');
+if (hamburger && navLinks) {
+  hamburger.addEventListener('click', () => {
+    navLinks.classList.toggle('open');
+    document.body.style.overflow = navLinks.classList.contains('open') ? 'hidden' : '';
+  });
+  document.addEventListener('click', (e) => {
+    if (!navbar.contains(e.target)) {
+      navLinks.classList.remove('open');
+      document.body.style.overflow = '';
+    }
+  });
+}
+
+// ── SCROLL TO TOP ────────────────────────────────────────────
+const scrollTopBtn = document.querySelector('.scroll-top');
+if (scrollTopBtn) {
+  window.addEventListener('scroll', () => {
+    scrollTopBtn.classList.toggle('visible', window.scrollY > 400);
+  });
+  scrollTopBtn.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
+}
+
+// ── TOAST NOTIFICATION ───────────────────────────────────────
+function showToast(message, icon = '✓') {
+  let toast = document.querySelector('.toast');
+  if (!toast) {
+    toast = document.createElement('div');
+    toast.className = 'toast';
+    document.body.appendChild(toast);
+  }
+  toast.innerHTML = `<span>${icon}</span> ${message}`;
+  toast.classList.add('show');
+  setTimeout(() => toast.classList.remove('show'), 4000);
+}
+
+// ── SAMPLE PROPERTY DATA ─────────────────────────────────────
+const properties = [
+  {
+    id: 1,
+    title: "Green Valley Premium Plot",
+    type: "Plot",
+    location: "Sarjapur Road, Bangalore",
+    area: "2400 sqft",
+    facing: "East",
+    road: "30ft Road",
+    price: "₹42 Lakhs",
+    badge: "HOT",
+    image: "https://images.unsplash.com/photo-1500382017468-9049fed747ef?w=700&q=80",
+    desc: "A premium east-facing plot in a gated layout with BBMP approval, BDA approved plan, ready for immediate construction. Well-developed infrastructure with tar roads, drainage, and streetlights.",
+    tags: ["BBMP Approved", "Gated Layout", "Immediate Construction"]
+  },
+  {
+    id: 2,
+    title: "Prestige Commercial Site",
+    type: "Site",
+    location: "Mysore Road, Bangalore",
+    area: "5000 sqft",
+    facing: "North-East",
+    road: "60ft Main Road",
+    price: "₹1.8 Crores",
+    badge: "NEW",
+    badgeType: "new",
+    image: "https://images.unsplash.com/photo-1486325212027-8081e485255e?w=700&q=80",
+    desc: "High-footfall commercial site on Mysore Road with excellent visibility. Suitable for showroom, warehouse, or mixed-use development. Near metro station.",
+    tags: ["Corner Site", "Metro Nearby", "High Visibility"]
+  },
+  {
+    id: 3,
+    title: "Harmony Residential Layout",
+    type: "Plot",
+    location: "Anekal, Bangalore",
+    area: "1800 sqft",
+    facing: "West",
+    road: "20ft Road",
+    price: "₹18 Lakhs",
+    badge: "",
+    image: "https://images.unsplash.com/photo-1560518883-ce09059eeffa?w=700&q=80",
+    desc: "Affordable residential plot in a fast-growing area. Surrounded by schools, hospitals, and tech parks. Clear title, bank loan eligible.",
+    tags: ["Bank Loan Eligible", "Clear Title", "Growing Area"]
+  },
+  {
+    id: 4,
+    title: "Lakeside Luxury Villa Site",
+    type: "Site",
+    location: "Kanakapura Road, Bangalore",
+    area: "8400 sqft",
+    facing: "North",
+    road: "40ft Road",
+    price: "₹3.2 Crores",
+    badge: "PREMIUM",
+    image: "https://images.unsplash.com/photo-1564013799919-ab600027ffc6?w=700&q=80",
+    desc: "Breathtaking lakeside site with clear water frontage. Ideal for luxury villa or boutique resort. Surrounded by natural greenery and fresh air.",
+    tags: ["Lake Frontage", "Luxury Zone", "Resort Potential"]
+  },
+  {
+    id: 5,
+    title: "Metro Tower Commercial Building",
+    type: "Building",
+    location: "Whitefield, Bangalore",
+    area: "12,000 sqft",
+    facing: "East",
+    road: "80ft Main Road",
+    price: "₹8.5 Crores",
+    badge: "HOT",
+    image: "https://images.unsplash.com/photo-1497366216548-37526070297c?w=700&q=80",
+    desc: "G+4 commercial building with lift, parking, fire NOC, OC received. Fully tenanted with reputed MNC tenants. Excellent rental yield investment.",
+    tags: ["Fully Tenanted", "OC Received", "High Rental Yield"]
+  },
+  {
+    id: 6,
+    title: "Sunrise Industrial Plot",
+    type: "Plot",
+    location: "Peenya Industrial Area, Bangalore",
+    area: "10,000 sqft",
+    facing: "South-East",
+    road: "60ft Road",
+    price: "₹2.1 Crores",
+    badge: "NEW",
+    badgeType: "new",
+    image: "https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=700&q=80",
+    desc: "KIADB approved industrial plot in established industrial area. All utilities available. Excellent connectivity to NH4 and airport.",
+    tags: ["KIADB Approved", "NH4 Connectivity", "Utilities Available"]
+  }
+];
+
+// ── RENDER PROPERTY CARD ─────────────────────────────────────
+function renderCard(prop, featured = false) {
+  return `
+    <div class="listing-card" data-type="${prop.type.toLowerCase()}">
+      <div class="card-img">
+        <img src="${prop.image}" alt="${prop.title}" loading="lazy"/>
+        ${prop.badge ? `<span class="card-badge ${prop.badgeType || ''}">${prop.badge}</span>` : ''}
+        <button class="card-wishlist" onclick="toggleWishlist(this)" title="Save property">♡</button>
+      </div>
+      <div class="card-body">
+        <p class="card-type">${prop.type}</p>
+        <h3 class="card-title">${prop.title}</h3>
+        <p class="card-location"><i class="fas fa-location-dot"></i> ${prop.location}</p>
+        <div class="card-details">
+          <div class="card-detail">
+            <span>Area</span><span>${prop.area}</span>
+          </div>
+          <div class="card-detail">
+            <span>Facing</span><span>${prop.facing}</span>
+          </div>
+          <div class="card-detail">
+            <span>Road</span><span>${prop.road}</span>
+          </div>
+        </div>
+        <div class="card-footer">
+          <div class="card-price">
+            ${prop.price}
+            <span>Price</span>
+          </div>
+          <a href="property.html?id=${prop.id}" class="card-cta">View Details</a>
+        </div>
+      </div>
+    </div>
+  `;
+}
+
+// ── FEATURED GRID (index.html) ───────────────────────────────
+const featuredGrid = document.getElementById('featuredGrid');
+if (featuredGrid) {
+  const featured = properties.slice(0, 3);
+  featuredGrid.innerHTML = featured.map(p => renderCard(p, true)).join('');
+}
+
+// ── FULL LISTINGS GRID (listings.html) ──────────────────────
+const listingsGrid = document.getElementById('listingsGrid');
+const filterChips  = document.querySelectorAll('.filter-chip');
+const listingCount = document.getElementById('listingCount');
+
+function renderListings(type = 'all') {
+  if (!listingsGrid) return;
+  const filtered = type === 'all'
+    ? properties
+    : properties.filter(p => p.type.toLowerCase() === type.toLowerCase());
+
+  if (listingCount) listingCount.textContent = `${filtered.length} Properties Found`;
+  listingsGrid.innerHTML = filtered.length
+    ? filtered.map(p => renderCard(p)).join('')
+    : `<div style="grid-column:1/-1;text-align:center;padding:4rem;color:var(--text-light)">
+         <i class="fas fa-search" style="font-size:3rem;opacity:0.3;margin-bottom:1rem;display:block;"></i>
+         No properties found for this filter.
+       </div>`;
+}
+
+if (listingsGrid) {
+  // Check URL param
+  const urlType = new URLSearchParams(window.location.search).get('type') || 'all';
+  renderListings(urlType);
+
+  // Set active filter
+  filterChips.forEach(chip => {
+    if (chip.dataset.filter === urlType) chip.classList.add('active');
+    chip.addEventListener('click', () => {
+      filterChips.forEach(c => c.classList.remove('active'));
+      chip.classList.add('active');
+      renderListings(chip.dataset.filter);
+    });
+  });
+}
+
+// ── WISHLIST TOGGLE ──────────────────────────────────────────
+function toggleWishlist(btn) {
+  const isSaved = btn.textContent === '♥';
+  btn.textContent = isSaved ? '♡' : '♥';
+  btn.style.color = isSaved ? '' : '#e74c3c';
+  showToast(isSaved ? 'Removed from saved properties.' : 'Property saved! 🏡');
+}
+
+// ── PROPERTY DETAIL PAGE ─────────────────────────────────────
+const propertyDetail = document.getElementById('propertyDetail');
+if (propertyDetail) {
+  const id = parseInt(new URLSearchParams(window.location.search).get('id'));
+  const prop = properties.find(p => p.id === id) || properties[0];
+
+  document.getElementById('detailTitle').textContent    = prop.title;
+  document.getElementById('detailType').textContent     = prop.type;
+  document.getElementById('detailLocation').textContent = prop.location;
+  document.getElementById('detailArea').textContent     = prop.area;
+  document.getElementById('detailFacing').textContent   = prop.facing;
+  document.getElementById('detailRoad').textContent     = prop.road;
+  document.getElementById('detailPrice').textContent    = prop.price;
+  document.getElementById('detailDesc').textContent     = prop.desc;
+  document.getElementById('detailImg').src              = prop.image;
+  document.title = `${prop.title} — JV Estate`;
+
+  // Breadcrumb
+  const crumb = document.getElementById('propBreadcrumb');
+  if (crumb) crumb.textContent = prop.title;
+
+  // Tags
+  const tagsEl = document.getElementById('detailTags');
+  if (tagsEl) tagsEl.innerHTML = prop.tags.map(t =>
+    `<span style="background:var(--cream);color:var(--green);padding:0.3rem 0.9rem;border-radius:50px;font-size:0.8rem;font-weight:600;">${t}</span>`
+  ).join('');
+}
+
+// ── REGISTRATION FORM ────────────────────────────────────────
+const registerForm = document.getElementById('registerForm');
+if (registerForm) {
+  registerForm.addEventListener('submit', function(e) {
+    e.preventDefault();
+    const btn = this.querySelector('.submit-btn');
+    btn.textContent = 'Sending...';
+    btn.disabled = true;
+
+    const data = {
+      name:     document.getElementById('regName').value,
+      email:    document.getElementById('regEmail').value,
+      phone:    document.getElementById('regPhone').value,
+      city:     document.getElementById('regCity').value,
+      interest: document.getElementById('regInterest').value,
+      budget:   document.getElementById('regBudget').value,
+      message:  document.getElementById('regMessage').value
+    };
+
+    // EmailJS Integration
+    // Replace the values below with your EmailJS Service ID, Template ID, and Public Key
+    // Sign up free at https://www.emailjs.com
+    emailjs.send(
+      'service_syua1tk',    // ← Replace with your EmailJS Service ID
+      'template_nwrufy3',   // ← Replace with your EmailJS Template ID
+      {
+        to_email:    'jvestates.ss@gmail.com',
+        from_name:   data.name,
+        from_email:  data.email,
+        phone:       data.phone,
+        city:        data.city,
+        interest:    data.interest,
+        budget:      data.budget,
+        message:     data.message || 'No message provided.',
+        reply_to:    data.email
+      }
+    ).then(() => {
+      document.getElementById('successMsg').style.display = 'block';
+      registerForm.reset();
+      btn.textContent = 'Registration Sent!';
+      showToast('Registration successful! We will contact you soon. 🎉');
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }).catch(err => {
+      console.error('EmailJS error:', err);
+      btn.textContent = 'Register Now';
+      btn.disabled = false;
+      showToast('⚠ Could not send. Please email us directly at jvestates.ss@gmail.com');
+    });
+  });
+}
+
+// ── CONTACT FORM ─────────────────────────────────────────────
+const contactForm = document.getElementById('contactForm');
+if (contactForm) {
+  contactForm.addEventListener('submit', function(e) {
+    e.preventDefault();
+    const btn = this.querySelector('.submit-btn');
+    btn.textContent = 'Sending...';
+    btn.disabled = true;
+
+    const data = {
+      name:    document.getElementById('cName').value,
+      email:   document.getElementById('cEmail').value,
+      phone:   document.getElementById('cPhone').value,
+      subject: document.getElementById('cSubject').value,
+      message: document.getElementById('cMessage').value
+    };
+
+    emailjs.send(
+      'service_syua1tk',
+      'template_nwrufy3',
+      {
+        to_email:   'jvestates.ss@gmail.com',
+        from_name:  data.name,
+        from_email: data.email,
+        phone:      data.phone,
+        subject:    data.subject,
+        message:    data.message,
+        reply_to:   data.email
+      }
+    ).then(() => {
+      showToast('Message sent! We\'ll get back to you soon. ✓');
+      contactForm.reset();
+      btn.textContent = 'Send Message';
+      btn.disabled = false;
+    }).catch(() => {
+      showToast('⚠ Failed to send. Try emailing us at jvestates.ss@gmail.com');
+      btn.textContent = 'Send Message';
+      btn.disabled = false;
+    });
+  });
+}
+
+// ── SCROLL ANIMATIONS ────────────────────────────────────────
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.style.opacity = '1';
+      entry.target.style.transform = 'translateY(0)';
+    }
+  });
+}, { threshold: 0.1 });
+
+document.querySelectorAll('.listing-card, .why-card, .cat-card, .testimonial-card, .team-card').forEach(el => {
+  el.style.opacity = '0';
+  el.style.transform = 'translateY(30px)';
+  el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+  observer.observe(el);
+});
+
+// ── ACTIVE NAV LINK ──────────────────────────────────────────
+const currentPage = window.location.pathname.split('/').pop() || 'index.html';
+document.querySelectorAll('.nav-link').forEach(link => {
+  const href = link.getAttribute('href');
+  if (href === currentPage || (currentPage === '' && href === 'index.html')) {
+    link.classList.add('active');
+  } else {
+    link.classList.remove('active');
+  }
+});
+</script>
+<script>
+/* ═══════════════════════════════════════════════════════════════════
+   JV ESTATE — Main JavaScript
+   
+   ★ HOW TO ADD / EDIT YOUR PROPERTIES:
+     - Find the section below marked "YOUR PROPERTIES — EDIT HERE"
+     - Change title, price, location, area, facing, road, type
+     - For images: upload your photo to https://imgbb.com (free)
+       then copy the "Direct Link" and paste it as the image value
+     - To add a new property: copy one block { ... } and paste it
+       with a new id number at the end of the list
+═══════════════════════════════════════════════════════════════════ */
+
+// ── NAVBAR SCROLL
+const navbar = document.getElementById('navbar');
+if (navbar) {
+  window.addEventListener('scroll', () => {
+    navbar.classList.toggle('scrolled', window.scrollY > 50);
+  });
+}
+
+// ── HAMBURGER MENU
+const hamburger = document.getElementById('hamburger');
+const navLinks  = document.getElementById('navLinks');
+if (hamburger && navLinks) {
+  hamburger.addEventListener('click', () => {
+    navLinks.classList.toggle('open');
+    document.body.style.overflow = navLinks.classList.contains('open') ? 'hidden' : '';
+  });
+  document.addEventListener('click', (e) => {
+    if (!navbar.contains(e.target)) {
+      navLinks.classList.remove('open');
+      document.body.style.overflow = '';
+    }
+  });
+}
+
+// ── SCROLL TO TOP
+const scrollTopBtn = document.querySelector('.scroll-top');
+if (scrollTopBtn) {
+  window.addEventListener('scroll', () => {
+    scrollTopBtn.classList.toggle('visible', window.scrollY > 400);
+  });
+  scrollTopBtn.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
+}
+
+// ── TOAST NOTIFICATION
+function showToast(message) {
+  let toast = document.querySelector('.toast');
+  if (!toast) {
+    toast = document.createElement('div');
+    toast.className = 'toast';
+    document.body.appendChild(toast);
+  }
+  toast.innerHTML = message;
+  toast.classList.add('show');
+  setTimeout(() => toast.classList.remove('show'), 5000);
+}
+
+/* ═══════════════════════════════════════════════════════════════════
+   ★★★ YOUR PROPERTIES — EDIT HERE ★★★
+   
+   HOW TO USE YOUR OWN PHOTOS:
+   1. Go to https://imgbb.com
+   2. Click "Start Uploading" — upload your property photo
+   3. After upload, click the photo → click "Get Shareable Links"
+   4. Copy the "Direct Link" (ends in .jpg or .png)
+   5. Paste it below as the image value
+
+   FIELD GUIDE:
+   - id:       Just a number. Each property must have a unique number.
+   - title:    Name of the property
+   - type:     Must be one of: "Plot" | "Building" | "Site" | "Commercial"
+   - location: Area and city
+   - area:     Size (e.g. "2400 sqft" or "1.5 acres")
+   - facing:   Direction (East / West / North / South / North-East etc.)
+   - road:     Road width in front of property
+   - price:    Price as text (e.g. "₹42 Lakhs" or "₹1.8 Crores")
+   - badge:    Small label on the card. Use "HOT" / "NEW" / "PREMIUM" / "" (none)
+   - badgeType: Use "new" for green badge, leave out for gold badge
+   - image:    URL of your photo (from imgbb or any image host)
+   - desc:     Full description shown on the property detail page
+   - tags:     Up to 3 short feature labels shown on detail page
+═══════════════════════════════════════════════════════════════════ */
+const properties = [
+  {
+    id: 1,
+    title: "Green Valley Premium Plot",
+    type: "Plot",
+    location: "Sarjapur Road, Bangalore",
+    area: "2400 sqft",
+    facing: "East",
+    road: "30ft Road",
+    price: "₹42 Lakhs",
+    badge: "HOT",
+    image: "https://images.unsplash.com/photo-1500382017468-9049fed747ef?w=700&q=80",
+    desc: "A premium east-facing plot in a gated layout with BBMP approval, BDA approved plan, ready for immediate construction. Well-developed infrastructure with tar roads, drainage, and streetlights.",
+    tags: ["BBMP Approved", "Gated Layout", "Immediate Construction"]
+  },
+  {
+    id: 2,
+    title: "Prestige Commercial Site",
+    type: "Site",
+    location: "Mysore Road, Bangalore",
+    area: "5000 sqft",
+    facing: "North-East",
+    road: "60ft Main Road",
+    price: "₹1.8 Crores",
+    badge: "NEW",
+    badgeType: "new",
+    image: "https://images.unsplash.com/photo-1486325212027-8081e485255e?w=700&q=80",
+    desc: "High-footfall commercial site on Mysore Road with excellent visibility. Suitable for showroom, warehouse, or mixed-use development. Near metro station.",
+    tags: ["Corner Site", "Metro Nearby", "High Visibility"]
+  },
+  {
+    id: 3,
+    title: "Harmony Residential Layout",
+    type: "Plot",
+    location: "Anekal, Bangalore",
+    area: "1800 sqft",
+    facing: "West",
+    road: "20ft Road",
+    price: "₹18 Lakhs",
+    badge: "",
+    image: "https://images.unsplash.com/photo-1560518883-ce09059eeffa?w=700&q=80",
+    desc: "Affordable residential plot in a fast-growing area. Surrounded by schools, hospitals, and tech parks. Clear title, bank loan eligible.",
+    tags: ["Bank Loan Eligible", "Clear Title", "Growing Area"]
+  },
+  {
+    id: 4,
+    title: "Lakeside Luxury Villa Site",
+    type: "Site",
+    location: "Kanakapura Road, Bangalore",
+    area: "8400 sqft",
+    facing: "North",
+    road: "40ft Road",
+    price: "₹3.2 Crores",
+    badge: "PREMIUM",
+    image: "https://images.unsplash.com/photo-1564013799919-ab600027ffc6?w=700&q=80",
+    desc: "Breathtaking lakeside site with clear water frontage. Ideal for luxury villa or boutique resort. Surrounded by natural greenery and fresh air.",
+    tags: ["Lake Frontage", "Luxury Zone", "Resort Potential"]
+  },
+  {
+    id: 5,
+    title: "Metro Tower Commercial Building",
+    type: "Building",
+    location: "Whitefield, Bangalore",
+    area: "12,000 sqft",
+    facing: "East",
+    road: "80ft Main Road",
+    price: "₹8.5 Crores",
+    badge: "HOT",
+    image: "https://images.unsplash.com/photo-1497366216548-37526070297c?w=700&q=80",
+    desc: "G+4 commercial building with lift, parking, fire NOC, OC received. Fully tenanted with reputed MNC tenants. Excellent rental yield investment.",
+    tags: ["Fully Tenanted", "OC Received", "High Rental Yield"]
+  },
+  {
+    id: 6,
+    title: "Sunrise Industrial Plot",
+    type: "Plot",
+    location: "Peenya Industrial Area, Bangalore",
+    area: "10,000 sqft",
+    facing: "South-East",
+    road: "60ft Road",
+    price: "₹2.1 Crores",
+    badge: "NEW",
+    badgeType: "new",
+    image: "https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=700&q=80",
+    desc: "KIADB approved industrial plot in established industrial area. All utilities available. Excellent connectivity to NH4 and airport.",
+    tags: ["KIADB Approved", "NH4 Connectivity", "Utilities Available"]
+  }
+  // ── TO ADD A NEW PROPERTY, copy the block above and paste here ──
+  // Example:
+  // ,{
+  //   id: 7,
+  //   title: "Your Property Name",
+  //   type: "Plot",
+  //   location: "Your Location, City",
+  //   area: "1200 sqft",
+  //   facing: "North",
+  //   road: "40ft Road",
+  //   price: "₹25 Lakhs",
+  //   badge: "NEW",
+  //   badgeType: "new",
+  //   image: "https://i.ibb.co/your-image-link.jpg",
+  //   desc: "Write your property description here.",
+  //   tags: ["Tag One", "Tag Two", "Tag Three"]
+  // }
+];
+/* ═══════════════════════════════════════════════════════════════════
+   END OF PROPERTY LIST
+═══════════════════════════════════════════════════════════════════ */
+
+// ── RENDER PROPERTY CARD
+function renderCard(prop) {
+  return `
+    <div class="listing-card" data-type="${prop.type.toLowerCase()}">
+      <div class="card-img">
+        <img src="${prop.image}" alt="${prop.title}" loading="lazy"
+             onerror="this.src='https://images.unsplash.com/photo-1560518883-ce09059eeffa?w=700&q=80'"/>
+        ${prop.badge ? `<span class="card-badge ${prop.badgeType || ''}">${prop.badge}</span>` : ''}
+        <button class="card-wishlist" onclick="toggleWishlist(this)" title="Save property">♡</button>
+      </div>
+      <div class="card-body">
+        <p class="card-type">${prop.type}</p>
+        <h3 class="card-title">${prop.title}</h3>
+        <p class="card-location"><i class="fas fa-location-dot"></i> ${prop.location}</p>
+        <div class="card-details">
+          <div class="card-detail"><span>Area</span><span>${prop.area}</span></div>
+          <div class="card-detail"><span>Facing</span><span>${prop.facing}</span></div>
+          <div class="card-detail"><span>Road</span><span>${prop.road}</span></div>
+        </div>
+        <div class="card-footer">
+          <div class="card-price">${prop.price}<span>Price</span></div>
+          <a href="property.html?id=${prop.id}" class="card-cta">View Details</a>
+        </div>
+      </div>
+    </div>
+  `;
+}
+
+// ── FEATURED GRID (index.html)
+const featuredGrid = document.getElementById('featuredGrid');
+if (featuredGrid) {
+  featuredGrid.innerHTML = properties.slice(0, 3).map(p => renderCard(p)).join('');
+}
+
+// ── FULL LISTINGS GRID (listings.html)
+const listingsGrid = document.getElementById('listingsGrid');
+const filterChips  = document.querySelectorAll('.filter-chip');
+const listingCount = document.getElementById('listingCount');
+
+function renderListings(type = 'all') {
+  if (!listingsGrid) return;
+  const filtered = type === 'all'
+    ? properties
+    : properties.filter(p => p.type.toLowerCase() === type.toLowerCase());
+  if (listingCount) listingCount.textContent = `${filtered.length} Properties Found`;
+  listingsGrid.innerHTML = filtered.length
+    ? filtered.map(p => renderCard(p)).join('')
+    : `<div style="grid-column:1/-1;text-align:center;padding:4rem;color:var(--text-light)">
+         <i class="fas fa-search" style="font-size:3rem;opacity:0.3;margin-bottom:1rem;display:block;"></i>
+         No properties found for this filter.
+       </div>`;
+  // Re-run animations on new cards
+  document.querySelectorAll('.listing-card').forEach(el => {
+    el.style.opacity = '0';
+    el.style.transform = 'translateY(30px)';
+    setTimeout(() => { el.style.opacity = '1'; el.style.transform = 'translateY(0)'; }, 50);
+  });
+}
+
+if (listingsGrid) {
+  const urlType = new URLSearchParams(window.location.search).get('type') || 'all';
+  renderListings(urlType);
+  filterChips.forEach(chip => {
+    if (chip.dataset.filter === urlType) chip.classList.add('active');
+    chip.addEventListener('click', () => {
+      filterChips.forEach(c => c.classList.remove('active'));
+      chip.classList.add('active');
+      renderListings(chip.dataset.filter);
+    });
+  });
+}
+
+// ── WISHLIST
+function toggleWishlist(btn) {
+  const isSaved = btn.textContent === '♥';
+  btn.textContent = isSaved ? '♡' : '♥';
+  btn.style.color = isSaved ? '' : '#e74c3c';
+  showToast(isSaved ? '✓ Removed from saved properties.' : '✓ Property saved! 🏡');
+}
+
+// ── PROPERTY DETAIL PAGE
+const propertyDetailPage = document.getElementById('propertyDetail');
+if (propertyDetailPage) {
+  const id   = parseInt(new URLSearchParams(window.location.search).get('id'));
+  const prop = properties.find(p => p.id === id) || properties[0];
+  const set  = (elId, val) => { const el = document.getElementById(elId); if (el) el.textContent = val; };
+
+  set('detailTitle', prop.title);
+  set('detailType', prop.type);
+  set('detailLocation', prop.location);
+  set('detailArea', prop.area);
+  set('detailFacing', prop.facing);
+  set('detailRoad', prop.road);
+  set('detailPrice', prop.price);
+  set('detailDesc', prop.desc);
+  set('propBreadcrumb', prop.title);
+  document.title = prop.title + ' — JV Estate';
+
+  const img = document.getElementById('detailImg');
+  if (img) img.src = prop.image;
+
+  const tagsEl = document.getElementById('detailTags');
+  if (tagsEl) tagsEl.innerHTML = prop.tags.map(t =>
+    `<span style="background:var(--cream);color:var(--green);padding:0.3rem 0.9rem;border-radius:50px;font-size:0.8rem;font-weight:600;">${t}</span>`
+  ).join('');
+
+  // Similar properties
+  const similarGrid = document.getElementById('similarGrid');
+  if (similarGrid) {
+    similarGrid.innerHTML = properties.filter(p => p.id !== prop.id).slice(0, 3).map(p => renderCard(p)).join('');
+  }
+}
+
+// ── SCROLL ANIMATIONS
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.style.opacity = '1';
+      entry.target.style.transform = 'translateY(0)';
+    }
+  });
+}, { threshold: 0.08 });
+
+document.querySelectorAll('.listing-card, .why-card, .cat-card, .testimonial-card, .team-card').forEach(el => {
+  el.style.opacity = '0';
+  el.style.transform = 'translateY(30px)';
+  el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+  observer.observe(el);
+});
+
+// ── ACTIVE NAV LINK
+const currentPage = window.location.pathname.split('/').pop() || 'index.html';
+document.querySelectorAll('.nav-link').forEach(link => {
+  link.classList.toggle('active', link.getAttribute('href') === currentPage);
+});
+
+/* ═══════════════════════════════════════════════════════════════════
+   EMAIL FORMS — Using Formspree (works without API keys)
+   Formspree sends every submission directly to jvestates.ss@gmail.com
+═══════════════════════════════════════════════════════════════════ */
+
+// ── REGISTRATION FORM (register.html)
+const registerForm = document.getElementById('registerForm');
+if (registerForm) {
+  registerForm.addEventListener('submit', async function(e) {
+    e.preventDefault();
+    const btn = this.querySelector('.submit-btn');
+    const originalText = btn.innerHTML;
+    btn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Sending...';
+    btn.disabled = true;
+
+    const formData = {
+      name:     document.getElementById('regName').value,
+      email:    document.getElementById('regEmail').value,
+      phone:    document.getElementById('regPhone').value,
+      city:     document.getElementById('regCity').value,
+      interest: document.getElementById('regInterest').value,
+      budget:   document.getElementById('regBudget').value,
+      message:  document.getElementById('regMessage').value,
+      _subject: 'New Client Registration — JV Estate'
+    };
+
+    try {
+      // ★ FORMSPREE: Replace YOUR_FORM_ID below with your Formspree form ID
+      // Setup takes 2 minutes — see SETUP GUIDE in register.html
+      const response = await fetch('https://formspree.io/f/YOUR_FORM_ID', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+        body: JSON.stringify(formData)
+      });
+
+      if (response.ok) {
+        document.getElementById('successMsg').style.display = 'block';
+        registerForm.style.display = 'none';
+        showToast('✓ Registration successful! We will contact you soon. 🎉');
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      } else {
+        throw new Error('Form submission failed');
+      }
+    } catch (err) {
+      btn.innerHTML = originalText;
+      btn.disabled = false;
+      showToast('⚠ Could not send. Please call us at +91 98456 25454 / +91 97383 82786');
+    }
+  });
+}
+
+// ── CONTACT FORM (contact.html)
+const contactForm = document.getElementById('contactForm');
+if (contactForm) {
+  contactForm.addEventListener('submit', async function(e) {
+    e.preventDefault();
+    const btn = this.querySelector('.submit-btn');
+    const originalText = btn.innerHTML;
+    btn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Sending...';
+    btn.disabled = true;
+
+    const formData = {
+      name:     document.getElementById('cName').value,
+      email:    document.getElementById('cEmail').value,
+      phone:    document.getElementById('cPhone').value,
+      subject:  document.getElementById('cSubject').value,
+      message:  document.getElementById('cMessage').value,
+      _subject: 'New Contact Message — JV Estate'
+    };
+
+    try {
+      const response = await fetch('https://formspree.io/f/YOUR_FORM_ID', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+        body: JSON.stringify(formData)
+      });
+
+      if (response.ok) {
+        showToast("✓ Message sent! We'll get back to you soon.");
+        contactForm.reset();
+        btn.innerHTML = originalText;
+        btn.disabled = false;
+      } else {
+        throw new Error('Failed');
+      }
+    } catch (err) {
+      btn.innerHTML = originalText;
+      btn.disabled = false;
+      showToast('⚠ Could not send. Please email jvestates.ss@gmail.com directly.');
+    }
+  });
+}
+
+// ── PROPERTY ENQUIRY FORM (property.html)
+function submitEnquiry() {
+  const btn = document.getElementById('enquiryBtn');
+  const prop = document.getElementById('detailTitle')?.textContent || 'Property';
+  btn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Sending...';
+  btn.disabled = true;
+
+  const formData = {
+    name:    document.getElementById('enqName').value,
+    email:   document.getElementById('enqEmail').value,
+    phone:   document.getElementById('enqPhone').value,
+    date:    document.getElementById('enqDate').value,
+    message: document.getElementById('enqMessage').value,
+    property: prop,
+    _subject: `Site Visit Request — ${prop}`
+  };
+
+  fetch('https://formspree.io/f/YOUR_FORM_ID', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+    body: JSON.stringify(formData)
+  }).then(r => {
+    if (r.ok) {
+      document.getElementById('enquirySuccess').style.display = 'block';
+      btn.innerHTML = '<i class="fas fa-check"></i> Request Sent!';
+    } else {
+      throw new Error();
+    }
+  }).catch(() => {
+    btn.innerHTML = 'Book Site Visit';
+    btn.disabled = false;
+    showToast('⚠ Could not send. Please call +91 98456 25454 / +91 97383 82786');
+  });
+}
+</script>
+<script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+<script>
+/* ═══════════════════════════════════════════════════════════════════
+   JV ESTATE — Main JavaScript
+   EmailJS configured: Service ID, Template ID, Public Key all set.
+═══════════════════════════════════════════════════════════════════ */
+
+// ── EmailJS Initialise (runs on every page)
+(function () {
+  if (typeof emailjs !== 'undefined') {
+    emailjs.init({ publicKey: "6hsuH0_pJkAqmAT81" });
+  }
+})();
+
+// ── NAVBAR SCROLL
+const navbar = document.getElementById('navbar');
+if (navbar) {
+  window.addEventListener('scroll', () => {
+    navbar.classList.toggle('scrolled', window.scrollY > 50);
+  });
+}
+
+// ── HAMBURGER MENU
+const hamburger = document.getElementById('hamburger');
+const navLinks  = document.getElementById('navLinks');
+if (hamburger && navLinks) {
+  hamburger.addEventListener('click', () => {
+    navLinks.classList.toggle('open');
+    document.body.style.overflow = navLinks.classList.contains('open') ? 'hidden' : '';
+  });
+  document.addEventListener('click', (e) => {
+    if (!navbar.contains(e.target)) {
+      navLinks.classList.remove('open');
+      document.body.style.overflow = '';
+    }
+  });
+}
+
+// ── SCROLL TO TOP
+const scrollTopBtn = document.querySelector('.scroll-top');
+if (scrollTopBtn) {
+  window.addEventListener('scroll', () => {
+    scrollTopBtn.classList.toggle('visible', window.scrollY > 400);
+  });
+  scrollTopBtn.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
+}
+
+// ── TOAST
+function showToast(message) {
+  let toast = document.querySelector('.toast');
+  if (!toast) {
+    toast = document.createElement('div');
+    toast.className = 'toast';
+    document.body.appendChild(toast);
+  }
+  toast.innerHTML = message;
+  toast.classList.add('show');
+  setTimeout(() => toast.classList.remove('show'), 5000);
+}
+
+/* ═══════════════════════════════════════════════════════════════════
+   ★★★  YOUR PROPERTY LISTINGS — EDIT HERE  ★★★
+   ─────────────────────────────────────────────────────────────────
+   HOW TO USE YOUR OWN PHOTOS:
+     1. Go to https://imgbb.com  (free image host, no signup needed)
+     2. Click "Start Uploading" and upload your property photo
+     3. After upload → click the image → click "Get Shareable Links"
+     4. Copy the "Direct link"  (it ends in .jpg or .png)
+     5. Paste that link as the  image:  value below
+
+   HOW TO EDIT A PROPERTY:
+     • Change any value between the quotes  "..."
+     • type must be one of:  "Plot"  "Building"  "Site"  "Commercial"
+     • badge options:  "HOT"  "NEW"  "PREMIUM"  or  ""  (no badge)
+     • badgeType: "new"  gives a green badge, leave it out for gold
+
+   HOW TO ADD A NEW PROPERTY:
+     • Copy one full block  {  ...  }  from below
+     • Paste it after the last  }  before the closing  ]
+     • Give it a new id number  (7, 8, 9 …)
+     • Fill in your details and your imgbb photo link
+
+   HOW TO REMOVE A PROPERTY:
+     • Delete the entire  {  ...  }  block for that property
+═══════════════════════════════════════════════════════════════════ */
+const properties = [
+  {
+    id: 1,
+    title: "Green Valley Premium Plot",       // ← Change property name
+    type: "Plot",                              // ← Plot / Building / Site / Commercial
+    location: "Sarjapur Road, Bangalore",      // ← Change location
+    area: "2400 sqft",                         // ← Change area
+    facing: "East",                            // ← Change facing direction
+    road: "30ft Road",                         // ← Change road width
+    price: "₹42 Lakhs",                       // ← Change price
+    badge: "HOT",                              // ← HOT / NEW / PREMIUM / ""
+    image: "https://images.unsplash.com/photo-1500382017468-9049fed747ef?w=700&q=80",
+    //       ↑ Replace the URL above with your imgbb direct link
+    desc: "A premium east-facing plot in a gated layout with BBMP approval, BDA approved plan, ready for immediate construction. Well-developed infrastructure with tar roads, drainage, and streetlights.",
+    tags: ["BBMP Approved", "Gated Layout", "Immediate Construction"]
+    //      ↑ Up to 3 short feature labels
+  },
+  {
+    id: 2,
+    title: "Prestige Commercial Site",
+    type: "Site",
+    location: "Mysore Road, Bangalore",
+    area: "5000 sqft",
+    facing: "North-East",
+    road: "60ft Main Road",
+    price: "₹1.8 Crores",
+    badge: "NEW",
+    badgeType: "new",
+    image: "https://images.unsplash.com/photo-1486325212027-8081e485255e?w=700&q=80",
+    desc: "High-footfall commercial site on Mysore Road with excellent visibility. Suitable for showroom, warehouse, or mixed-use development. Near metro station.",
+    tags: ["Corner Site", "Metro Nearby", "High Visibility"]
+  },
+  {
+    id: 3,
+    title: "Harmony Residential Layout",
+    type: "Plot",
+    location: "Anekal, Bangalore",
+    area: "1800 sqft",
+    facing: "West",
+    road: "20ft Road",
+    price: "₹18 Lakhs",
+    badge: "",
+    image: "https://images.unsplash.com/photo-1560518883-ce09059eeffa?w=700&q=80",
+    desc: "Affordable residential plot in a fast-growing area. Surrounded by schools, hospitals, and tech parks. Clear title, bank loan eligible.",
+    tags: ["Bank Loan Eligible", "Clear Title", "Growing Area"]
+  },
+  {
+    id: 4,
+    title: "Lakeside Luxury Villa Site",
+    type: "Site",
+    location: "Kanakapura Road, Bangalore",
+    area: "8400 sqft",
+    facing: "North",
+    road: "40ft Road",
+    price: "₹3.2 Crores",
+    badge: "PREMIUM",
+    image: "https://images.unsplash.com/photo-1564013799919-ab600027ffc6?w=700&q=80",
+    desc: "Breathtaking lakeside site with clear water frontage. Ideal for luxury villa or boutique resort. Surrounded by natural greenery and fresh air.",
+    tags: ["Lake Frontage", "Luxury Zone", "Resort Potential"]
+  },
+  {
+    id: 5,
+    title: "Metro Tower Commercial Building",
+    type: "Building",
+    location: "Whitefield, Bangalore",
+    area: "12,000 sqft",
+    facing: "East",
+    road: "80ft Main Road",
+    price: "₹8.5 Crores",
+    badge: "HOT",
+    image: "https://images.unsplash.com/photo-1497366216548-37526070297c?w=700&q=80",
+    desc: "G+4 commercial building with lift, parking, fire NOC, OC received. Fully tenanted with reputed MNC tenants. Excellent rental yield investment.",
+    tags: ["Fully Tenanted", "OC Received", "High Rental Yield"]
+  },
+  {
+    id: 6,
+    title: "Sunrise Industrial Plot",
+    type: "Plot",
+    location: "Peenya Industrial Area, Bangalore",
+    area: "10,000 sqft",
+    facing: "South-East",
+    road: "60ft Road",
+    price: "₹2.1 Crores",
+    badge: "NEW",
+    badgeType: "new",
+    image: "https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=700&q=80",
+    desc: "KIADB approved industrial plot in established industrial area. All utilities available. Excellent connectivity to NH4 and airport.",
+    tags: ["KIADB Approved", "NH4 Connectivity", "Utilities Available"]
+  }
+  // ── PASTE YOUR NEW PROPERTY BELOW THIS LINE ──────────────────
+  // ,{
+  //   id: 7,
+  //   title: "Your Property Name",
+  //   type: "Plot",
+  //   location: "Your Area, City",
+  //   area: "1500 sqft",
+  //   facing: "North",
+  //   road: "30ft Road",
+  //   price: "₹30 Lakhs",
+  //   badge: "NEW",
+  //   badgeType: "new",
+  //   image: "https://i.ibb.co/PASTE-YOUR-IMGBB-LINK-HERE.jpg",
+  //   desc: "Write your property description here. Add all important details.",
+  //   tags: ["Feature One", "Feature Two", "Feature Three"]
+  // }
+];
+/* ═══════════════════════════════════════════════════════════════════
+   END OF PROPERTY LIST — do not edit below this line unless needed
+═══════════════════════════════════════════════════════════════════ */
+
+// ── RENDER CARD
+function renderCard(prop) {
+  return `
+    <div class="listing-card" data-type="${prop.type.toLowerCase()}">
+      <div class="card-img">
+        <img src="${prop.image}" alt="${prop.title}" loading="lazy"
+             onerror="this.src='https://images.unsplash.com/photo-1560518883-ce09059eeffa?w=700&q=80'"/>
+        ${prop.badge ? `<span class="card-badge ${prop.badgeType || ''}">${prop.badge}</span>` : ''}
+        <button class="card-wishlist" onclick="toggleWishlist(this)" title="Save property">♡</button>
+      </div>
+      <div class="card-body">
+        <p class="card-type">${prop.type}</p>
+        <h3 class="card-title">${prop.title}</h3>
+        <p class="card-location"><i class="fas fa-location-dot"></i> ${prop.location}</p>
+        <div class="card-details">
+          <div class="card-detail"><span>Area</span><span>${prop.area}</span></div>
+          <div class="card-detail"><span>Facing</span><span>${prop.facing}</span></div>
+          <div class="card-detail"><span>Road</span><span>${prop.road}</span></div>
+        </div>
+        <div class="card-footer">
+          <div class="card-price">${prop.price}<span>Price</span></div>
+          <a href="property.html?id=${prop.id}" class="card-cta">View Details</a>
+        </div>
+      </div>
+    </div>`;
+}
+
+// ── FEATURED GRID (index.html)
+const featuredGrid = document.getElementById('featuredGrid');
+if (featuredGrid) {
+  featuredGrid.innerHTML = properties.slice(0, 3).map(p => renderCard(p)).join('');
+}
+
+// ── FULL LISTINGS (listings.html)
+const listingsGrid = document.getElementById('listingsGrid');
+const filterChips  = document.querySelectorAll('.filter-chip');
+const listingCount = document.getElementById('listingCount');
+
+function renderListings(type = 'all') {
+  if (!listingsGrid) return;
+  const filtered = type === 'all'
+    ? properties
+    : properties.filter(p => p.type.toLowerCase() === type.toLowerCase());
+  if (listingCount) listingCount.textContent = `${filtered.length} Properties Found`;
+  listingsGrid.innerHTML = filtered.length
+    ? filtered.map(p => renderCard(p)).join('')
+    : `<div style="grid-column:1/-1;text-align:center;padding:4rem;color:var(--text-light)">
+         <i class="fas fa-search" style="font-size:3rem;opacity:0.3;margin-bottom:1rem;display:block;"></i>
+         No properties found for this filter.</div>`;
+  document.querySelectorAll('.listing-card').forEach((el, i) => {
+    el.style.opacity = '0'; el.style.transform = 'translateY(30px)';
+    setTimeout(() => { el.style.opacity = '1'; el.style.transform = 'translateY(0)'; el.style.transition = 'all 0.5s ease'; }, i * 80);
+  });
+}
+
+if (listingsGrid) {
+  const urlType = new URLSearchParams(window.location.search).get('type') || 'all';
+  renderListings(urlType);
+  filterChips.forEach(chip => {
+    if (chip.dataset.filter === urlType) chip.classList.add('active');
+    chip.addEventListener('click', () => {
+      filterChips.forEach(c => c.classList.remove('active'));
+      chip.classList.add('active');
+      renderListings(chip.dataset.filter);
+    });
+  });
+}
+
+// ── WISHLIST
+function toggleWishlist(btn) {
+  const saved = btn.textContent === '♥';
+  btn.textContent = saved ? '♡' : '♥';
+  btn.style.color  = saved ? '' : '#e74c3c';
+  showToast(saved ? '✓ Removed from saved properties.' : '✓ Property saved! 🏡');
+}
+
+// ── PROPERTY DETAIL PAGE
+const propertyDetailPage = document.getElementById('propertyDetail');
+if (propertyDetailPage) {
+  const id   = parseInt(new URLSearchParams(window.location.search).get('id'));
+  const prop = properties.find(p => p.id === id) || properties[0];
+  const set  = (elId, val) => { const el = document.getElementById(elId); if (el) el.textContent = val; };
+  set('detailTitle',    prop.title);
+  set('detailType',     prop.type);
+  set('detailLocation', prop.location);
+  set('detailArea',     prop.area);
+  set('detailFacing',   prop.facing);
+  set('detailRoad',     prop.road);
+  set('detailPrice',    prop.price);
+  set('detailDesc',     prop.desc);
+  set('propBreadcrumb', prop.title);
+  document.title = prop.title + ' — JV Estate';
+  const img = document.getElementById('detailImg');
+  if (img) img.src = prop.image;
+  const tagsEl = document.getElementById('detailTags');
+  if (tagsEl) tagsEl.innerHTML = prop.tags.map(t =>
+    `<span style="background:var(--cream);color:var(--green);padding:0.3rem 0.9rem;border-radius:50px;font-size:0.8rem;font-weight:600;">${t}</span>`).join('');
+  const similarGrid = document.getElementById('similarGrid');
+  if (similarGrid) similarGrid.innerHTML = properties.filter(p => p.id !== prop.id).slice(0, 3).map(p => renderCard(p)).join('');
+}
+
+// ── SCROLL ANIMATIONS
+const animObserver = new IntersectionObserver((entries) => {
+  entries.forEach(e => { if (e.isIntersecting) { e.target.style.opacity='1'; e.target.style.transform='translateY(0)'; }});
+}, { threshold: 0.08 });
+document.querySelectorAll('.listing-card,.why-card,.cat-card,.testimonial-card,.team-card').forEach(el => {
+  el.style.opacity='0'; el.style.transform='translateY(30px)'; el.style.transition='opacity 0.6s ease, transform 0.6s ease';
+  animObserver.observe(el);
+});
+
+// ── ACTIVE NAV LINK
+const curPage = window.location.pathname.split('/').pop() || 'index.html';
+document.querySelectorAll('.nav-link').forEach(link => {
+  link.classList.toggle('active', link.getAttribute('href') === curPage);
+});
+
+/* ═══════════════════════════════════════════════════════════════════
+   EMAIL FORMS — EmailJS  (Service & Template IDs configured)
+═══════════════════════════════════════════════════════════════════ */
+const EJ_SERVICE  = "service_syua1tk";
+const EJ_TEMPLATE = "template_nwrufy3";
+
+// ── REGISTRATION FORM
+const registerForm = document.getElementById('registerForm');
+if (registerForm) {
+  registerForm.addEventListener('submit', function(e) {
+    e.preventDefault();
+    if (!document.getElementById('regConsent').checked) {
+      showToast('⚠ Please agree to the terms before registering.');
+      return;
+    }
+    const btn = this.querySelector('.submit-btn');
+    btn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Sending...';
+    btn.disabled = true;
+
+    emailjs.send(EJ_SERVICE, EJ_TEMPLATE, {
+      to_email:   'jvestates.ss@gmail.com',
+      from_name:  document.getElementById('regName').value,
+      from_email: document.getElementById('regEmail').value,
+      phone:      document.getElementById('regPhone').value,
+      city:       document.getElementById('regCity').value || 'Not specified',
+      interest:   document.getElementById('regInterest').value || 'Not specified',
+      budget:     document.getElementById('regBudget').value || 'Not specified',
+      message:    document.getElementById('regMessage').value || 'No additional requirements.',
+      subject:    'New Client Registration — JV Estate',
+      reply_to:   document.getElementById('regEmail').value
+    }).then(() => {
+      document.getElementById('successMsg').style.display = 'block';
+      registerForm.style.display = 'none';
+      showToast('✓ Registration successful! We will contact you soon. 🎉');
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }).catch((err) => {
+      console.error('EmailJS error:', err);
+      btn.innerHTML = '<i class="fas fa-paper-plane"></i> Register Now';
+      btn.disabled = false;
+      showToast('⚠ Sending failed. Please call us at +91 98456 25454 / +91 97383 82786');
+    });
+  });
+}
+
+// ── CONTACT FORM
+const contactForm = document.getElementById('contactForm');
+if (contactForm) {
+  contactForm.addEventListener('submit', function(e) {
+    e.preventDefault();
+    const btn = this.querySelector('.submit-btn');
+    btn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Sending...';
+    btn.disabled = true;
+
+    emailjs.send(EJ_SERVICE, EJ_TEMPLATE, {
+      to_email:   'jvestates.ss@gmail.com',
+      from_name:  document.getElementById('cName').value,
+      from_email: document.getElementById('cEmail').value,
+      phone:      document.getElementById('cPhone').value,
+      subject:    document.getElementById('cSubject').value,
+      message:    document.getElementById('cMessage').value,
+      reply_to:   document.getElementById('cEmail').value
+    }).then(() => {
+      showToast("✓ Message sent! We'll get back to you soon.");
+      contactForm.reset();
+      btn.innerHTML = '<i class="fas fa-paper-plane"></i> Send Message';
+      btn.disabled = false;
+    }).catch(() => {
+      btn.innerHTML = '<i class="fas fa-paper-plane"></i> Send Message';
+      btn.disabled = false;
+      showToast('⚠ Could not send. Please email jvestates.ss@gmail.com directly.');
+    });
+  });
+}
+
+// ── PROPERTY ENQUIRY
+function submitEnquiry() {
+  const btn  = document.getElementById('enquiryBtn');
+  const prop = document.getElementById('detailTitle')?.textContent || 'Property';
+  btn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Sending...';
+  btn.disabled = true;
+
+  emailjs.send(EJ_SERVICE, EJ_TEMPLATE, {
+    to_email:   'jvestates.ss@gmail.com',
+    from_name:  document.getElementById('enqName').value,
+    from_email: document.getElementById('enqEmail').value,
+    phone:      document.getElementById('enqPhone').value,
+    subject:    `Site Visit Request — ${prop}`,
+    message:    `Property: ${prop}\nPreferred Date: ${document.getElementById('enqDate').value}\n\n${document.getElementById('enqMessage').value}`,
+    reply_to:   document.getElementById('enqEmail').value
+  }).then(() => {
+    document.getElementById('enquirySuccess').style.display = 'block';
+    btn.innerHTML = '<i class="fas fa-check"></i> Request Sent!';
+  }).catch(() => {
+    btn.innerHTML = 'Book Site Visit';
+    btn.disabled = false;
+    showToast('⚠ Could not send. Please call +91 98456 25454 / +91 97383 82786');
+  });
+}
+</script></body></html>
